@@ -31,9 +31,12 @@
 // pin 3 - LCD reset (RST)
 Adafruit_PCD8544 display = Adafruit_PCD8544(7, 6, 5, 4, 3);
 
-uint8_t grid[42][3];
-uint8_t ngrid[42][3];
+// cell matrix
+// each bit is one cell
+uint8_t grid[42][3];  // main array
+uint8_t ngrid[42][3]; // temporary array
 
+// rules of Game of Life
 struct rule
 {
 uint16_t s; // survive
@@ -41,6 +44,7 @@ uint16_t b; // born
 char name[15];
 };
 
+// different rules
 const rule rules[]={
   {0b000001100,0b000001000,"S23/B3"},        // S23/B3 classic Game of Life
   {0b000111110,0b000001000,"S12345/B3"},     // S12345/B3 maze
@@ -56,24 +60,34 @@ const rule rules[]={
 
 const uint8_t nrules=sizeof(rules)/sizeof(rule);
 
+// bit manipulation
 #define gridRead(x,y) bitRead(grid[(x)][(y)/8],(y)%8)
 #define gridSet(x,y) bitSet(grid[(x)][(y)/8],(y)%8)
 #define gridClear(x,y) bitClear(grid[(x)][(y)/8],(y)%8)
 
+#define ngridSet(x,y) bitSet(ngrid[(x)][(y)/8],(y)%8)
+#define ngridClear(x,y) bitClear(ngrid[(x)][(y)/8],(y)%8)
+
+// pointer to function - get number of neighbors
 uint8_t (*getNON)(uint8_t x, uint8_t y);
 
+///
+/// Setup
+///
 void setup() {
-  Serial.begin(9600);
-
   display.begin();
   display.setContrast(60);
   display.clearDisplay();
   drawIntro();
-  display.display(); // show splashscreen
 
   randomSeed(analogRead(0));
 }
 
+///
+/// Intro
+///
+/// Two pages of text
+///
 void drawIntro()
 {
 display.setCursor(0,0);
@@ -89,13 +103,19 @@ display.display();
 delay(2000);
 }
 
+///
+/// Random start of live and dead cells
+///
 void initGrid()
 {
 for(uint8_t i=0;i<42;i++)
   for(uint8_t j=0;j<24;j++)
-    random(2) ? bitSet(grid[i][j/8],j%8) : bitClear(grid[i][j/8],j%8);
+    random(2) ? gridSet(i,j) : gridClear(i,j);
 }
 
+///
+/// Draw one step of game
+///
 void drawGrid(uint8_t step)
 {
 for(uint8_t i=0;i<42;i++)
@@ -120,19 +140,22 @@ display.drawLine(0,47,step,47,BLACK);
 display.display();
 }
 
+///
+/// Calculate next step
+///
 void nextStep(uint8_t rule)
 {
 for(uint8_t i=0;i<42;i++)
   for(uint8_t j=0;j<24;j++)
     {
     int near=getNON(i,j);
-    if(canSurvive(rule,bitRead(grid[i][j/8],j%8),near))
+    if(canSurvive(rule,gridRead(i,j),near))
       {
-      bitSet(ngrid[i][j/8],j%8);
+      ngridSet(i,j);
       }
     else
       {
-      bitClear(ngrid[i][j/8],j%8);
+      ngridClear(i,j);
       }
     }
 for(uint8_t i=0;i<42;i++)
@@ -140,6 +163,9 @@ for(uint8_t i=0;i<42;i++)
     grid[i][j]=ngrid[i][j];
 }
 
+///
+/// Border of screen is a border of cells
+///
 uint8_t getNumberOfNeighbors(uint8_t x, uint8_t y)
 {
 if(x==0)
@@ -179,6 +205,9 @@ return (uint8_t)gridRead(x-1,y-1)+(uint8_t)gridRead(x,y-1)+(uint8_t)gridRead(x+1
        (uint8_t)gridRead(x-1,y+1)+(uint8_t)gridRead(x,y+1)+(uint8_t)gridRead(x+1,y+1);
 }
 
+///
+/// Border of screen is one pixel wider. Cells on border dies at the first step.
+///
 uint8_t getNumberOfNeighborsWithBorder(uint8_t x, uint8_t y)
 {
 if(x==0 || y==0 || x==41 || y==23)
@@ -188,6 +217,9 @@ return (uint8_t)gridRead(x-1,y-1)+(uint8_t)gridRead(x,y-1)+(uint8_t)gridRead(x+1
        (uint8_t)gridRead(x-1,y+1)+(uint8_t)gridRead(x,y+1)+(uint8_t)gridRead(x+1,y+1);
 }
 
+///
+/// Cell can see through the border
+///
 uint8_t getNumberOfNeighborsInfinite(uint8_t x, uint8_t y)
 {
 if(x==0)
@@ -233,20 +265,26 @@ return (uint8_t)gridRead(x-1,y-1)+(uint8_t)gridRead(x,y-1)+(uint8_t)gridRead(x+1
        (uint8_t)gridRead(x-1,y+1)+(uint8_t)gridRead(x,y+1)+(uint8_t)gridRead(x+1,y+1);
 }
 
+///
+/// Apply the rules of life and death
+///
 uint8_t canSurvive(uint8_t r, uint8_t orig, uint16_t near)
 {
-if(orig)
+if(orig) // live cell
   {
   return rules[r].s&(1<<near);
   }
-else
+else // dead cell
   {
   return rules[r].b&(1<<near);
   }
 }
 
+///
+/// N rules
+///
 void loopAlgo() {
-for(uint8_t rule=0;rule<10;rule++)
+for(uint8_t rule=0;rule<nrules;rule++)
   {
   display.clearDisplay();
   display.setCursor(0,0);
@@ -270,6 +308,9 @@ for(uint8_t rule=0;rule<10;rule++)
   }
 }
 
+///
+/// Main loop with 3 different algorithms of neghbours calculation
+///
 void loop() {
 getNON=getNumberOfNeighbors;
 loopAlgo();
