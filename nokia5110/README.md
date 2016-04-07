@@ -5,10 +5,12 @@ Cheap monochromatic display 84x48.
 Conway's Game of Life. 10 different variants of rules. 3 different algorithms of border calculations.
 ![Game Of Life Example](http://www.arduinoslovakia.eu/image?name=arduino_game_of_life_classic.jpg "Game Of Life Example")
 
-http://www.arduinoslovakia.eu/blog/2016/3/nokia-5110--game-of-life
+* http://www.arduinoslovakia.eu/blog/2016/3/nokia-5110--game-of-life
+* https://www.youtube.com/watch?v=r1t7q32dl5w
 
 ### Random Clock
 Random analog clock values hh:mm:ss on Nokia 5110.
 ![Random Clock Example](http://www.arduinoslovakia.eu/image?name=nokia5110_random_clock02.jpg "Random Clock Example")
 
-http://www.arduinoslovakia.eu/blog/2016/3/nokia-5110--nahodne-hodiny
+* http://www.arduinoslovakia.eu/blog/2016/3/nokia-5110--nahodne-hodiny
+* https://www.youtube.com/watch?v=IvfoppuJT6A
