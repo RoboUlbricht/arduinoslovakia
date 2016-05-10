@@ -1,6 +1,6 @@
  /**
  * Arduino Native Capacitive Sensor
- * v. 1.0
+ * v. 1.1
  * Copyright (C) 2016 Robert Ulbricht
  * http://www.arduinoslovakia.eu
  * http://playground.arduino.cc/Code/CapacitiveSensor
@@ -33,21 +33,26 @@
 // pin 3 - LCD reset (RST)
 Adafruit_PCD8544 display = Adafruit_PCD8544(7, 6, 5, 4, 3);
 uint8_t cs=0;
+uint8_t data[84];
 
 void drawDisplay() {
-  display.clearDisplay();
-  display.setCursor(0,0);
-  display.print("Capacitive");
-  display.setCursor(0,8);
-  display.print("Sensor");
+display.clearDisplay();
+display.setCursor(0,0);
+display.print("Capacitive");
+display.setCursor(0,8);
+display.print("Sensor");
 
-  display.setCursor(0,32);
-  display.print("MS: ");
-  display.print(millis());
-  display.setCursor(0,40);
-  display.print("CS: ");
-  display.print(cs);
-  display.display(); 
+display.setCursor(0,32);
+display.print("MS: ");
+display.print(millis());
+display.setCursor(0,40);
+display.print("CS: ");
+display.print(cs);
+
+for(uint8_t i=0;i<84;i++)
+  display.drawLine(i,30,i,30-data[i],BLACK);
+
+display.display();
 }
 
 void setup() {
@@ -60,7 +65,10 @@ Serial.println("Arduino Native Capacitive Sensor");
 }
 
 void loop() {
+for(uint8_t i=1;i<84;i++)
+  data[i-1]=data[i];
 cs=readCapacitivePin(2);
+data[83]=cs;
 Serial.println(cs);
 drawDisplay();
 delay(100);
