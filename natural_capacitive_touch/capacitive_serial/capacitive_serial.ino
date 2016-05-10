@@ -1,5 +1,5 @@
  /**
- * Arduino Arduino Native Capacitive Sensor
+ * Arduino Native Capacitive Sensor
  * v. 1.0
  * Copyright (C) 2016 Robert Ulbricht
  * http://www.arduinoslovakia.eu

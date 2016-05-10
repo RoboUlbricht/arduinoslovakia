@@ -52,7 +52,6 @@ void drawDisplay() {
   display.print("CNT: ");
   display.print(t0);
   display.display();
-  
 }
 
 void setup() {
