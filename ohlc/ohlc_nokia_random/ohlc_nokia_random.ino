@@ -83,6 +83,6 @@ void loop() {
   display.drawLine(83,47-value+1,83,47-value-1,BLACK);
   display.display();
   
-  delay(200); // 5 valus/second
+  delay(200); // 5 values/second
 }
 
