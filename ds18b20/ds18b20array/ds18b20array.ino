@@ -1,6 +1,6 @@
 /**
  * Arduino Uno DS18B20 array generator
- * v. 1.0
+ * v. 1.1
  * Copyright (C) 2015 Robert Ulbricht
  * http://www.arduinoslovakia.eu
  *
@@ -47,7 +47,7 @@ sensors.begin();
 // Grab a count of devices on the wire
 int numberOfDevices = sensors.getDeviceCount();
 
-Serial.println("DeviceAddress da[]={");
+Serial.println("const DeviceAddress da[]={");
 // Loop through each device, print out address
 for (int i = 0; i < numberOfDevices; i++)
   {
