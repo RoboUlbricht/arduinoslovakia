@@ -48,8 +48,8 @@
 Adafruit_PCD8544 nokia = Adafruit_PCD8544(1, 2, 3, 4, 5);
 
 int status = WL_IDLE_STATUS;
-char ssid[] = "UPC3A7CE89";  //  your network SSID (name)
-char pass[] = "vPzbjuupdyB3";       // your network password
+char ssid[] = "XXXX";  // your network SSID (name)
+char pass[] = "XXXX";  // your network password
 
 unsigned int localPort = 2390;      // local port to listen for UDP packets
 IPAddress timeServer(129, 6, 15, 28); // time.nist.gov NTP server
