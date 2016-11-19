@@ -2,6 +2,7 @@
 Arduino examples from www.arduinoslovakia.eu.
 
 ### ATtiny85
+ATtiny85 sketches.
 
 ### due
 Arduino Due sketches.
