@@ -46,7 +46,6 @@ void setup() {
   root["fld_bool"] = true;
   root["fld_float1"] = 4.12345678;
   root["fld_float2"] = double_with_n_digits(4.12345678, 6);
-  root["fld_null"] = NULL;
 
   JsonArray& data = root.createNestedArray("fld_array");
   for (int i = 0; i < 5; i++)
