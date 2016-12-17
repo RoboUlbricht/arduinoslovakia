@@ -62,8 +62,8 @@ for(int i=8;i<13;i++)
 void loop() {
 for(int i=0;i<cnt;i++) {
   PORTB=0;
-  PORTB=arrow[i][1];
   PORTD=~arrow[i][0];
+  PORTB=arrow[i][1];
   delay(1000);
   }
 }
