@@ -26,12 +26,6 @@
    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-// AVR Timer CTC Interrupts Calculator
-// v. 3
-// http://www.arduinoslovakia.eu/application/timer-calculator
-// Microcontroller: ATmega328P
-// Created: 2017-01-23T20:04:00.567Z
-
 #define ledPin 13
 int counter = 0;
 
