@@ -12,6 +12,16 @@
    Libraries:
    U8g2: https://github.com/olikraus/u8g2 
    Version: 2.9.1 or higher
+
+   OLED | Arduino Pro Mini
+   -----|----
+   GND  | GND
+   VCC  | VCC
+   CLK  | 13
+   MOSI | 11
+   RES  | 8
+   DC   | 9
+   CS   | 10
   
    This program is free software: you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by

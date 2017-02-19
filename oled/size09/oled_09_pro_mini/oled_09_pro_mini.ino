@@ -12,7 +12,17 @@
    Libraries:
    U8g2: https://github.com/olikraus/u8g2 
    Version: 2.9.1 or higher
-  
+   
+   OLED | Arduino Pro Mini
+   -----|-----------------
+   GND  | GND | GND
+   VCC  | VCC | VCC
+   CLK  | 13  | 13
+   MOSI | 11  | 11
+   RES  | 8   | A1
+   DC   | 9   | A2
+   CS   | 10  | A3
+     
    This program is free software: you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by
    the Free Software Foundation, either version 3 of the License, or
@@ -29,7 +39,8 @@
 
 #include <U8g2lib.h>
 
-U8G2_SSD1306_128X64_NONAME_1_4W_HW_SPI u8g2(U8G2_R0, /* cs=*/ 10, /* dc=*/ 9, /* reset=*/ 8);
+//U8G2_SSD1306_128X64_NONAME_1_4W_HW_SPI u8g2(U8G2_R0, /* cs=*/ 10, /* dc=*/ 9, /* reset=*/ 8);
+U8G2_SSD1306_128X64_NONAME_1_4W_HW_SPI u8g2(U8G2_R0, /* cs=*/ A3, /* dc=*/ A2, /* reset=*/ A1);
 
 void setup() {
   u8g2.begin();
