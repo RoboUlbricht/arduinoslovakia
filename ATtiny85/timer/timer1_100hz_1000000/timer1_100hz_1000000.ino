@@ -35,6 +35,7 @@ void setupTimer1() {
   noInterrupts();
   // Clear registers
   TCNT1 = 0;
+  TCCR1 = 0;
 
   // 100.16025641025641 Hz (1000000/((155+1)*64))
   OCR1C = 155;
