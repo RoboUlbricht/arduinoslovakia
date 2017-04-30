@@ -92,7 +92,7 @@ void drawFrame() {
           (int)((m/1000L)%60),
           (int)(m%1000L));
   sprintf(sbuffer,"S:%07lu",step);
-  sprintf(ebuffer,"E:%02d/%07lu",0,errors);
+  sprintf(ebuffer,"E:%02d/%07lu",steperrors,errors);
   u8g2.firstPage();
   do {
 
