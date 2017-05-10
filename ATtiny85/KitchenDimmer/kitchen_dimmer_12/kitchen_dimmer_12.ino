@@ -31,7 +31,7 @@ enum states {stBoot, stDark, stOn, stHold, stOff, stOff30, stHold30};
 states state=stBoot;
 
 #if defined RDEBUG
-  //#include <SoftwareSerial.h>
+  #include <SoftwareSerial.h>
 
   const int dig_tx = 3;
   const int dig_rx = 4;
