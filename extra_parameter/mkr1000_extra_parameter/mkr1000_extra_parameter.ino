@@ -1,11 +1,14 @@
 /**
- * Arduino Uno - Extra parameters
+ * MKR1000 - Extra parameters
  * v. 1.0
  * Copyright (C) 2017 Robert Ulbricht
  * http://www.arduinoslovakia.eu
  *
- * Find file '/hardware/arduino/avr/platform.txt'. In the same directory
- * create file 'platfom.local.txt'. Insert text 
+ * IDE: 1.8.2
+ * SAMD CORE: 1.6.15
+ * 
+ * Find file 'c:\Users\Robo\AppData\Local\Arduino15\packages\arduino\hardware\samd\1.6.15\platform.txt'. 
+ * In the same directory create file 'platfom.local.txt'. Insert text 
  * 'compiler.cpp.extra_flags=-DEXTRA_PARAMETER="abc123"' into the file.
  *
  * This program is free software: you can redistribute it and/or modify
