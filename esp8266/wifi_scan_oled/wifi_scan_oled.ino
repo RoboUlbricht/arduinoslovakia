@@ -1,6 +1,6 @@
 /**
    Arduino ESP8266 OLED 0.9 SSD1306 WiFi Scanner
-   v. 1.0
+   v. 1.1
    Copyright (C) 2017 Robert Ulbricht
    http://www.arduinoslovakia.eu
 
@@ -33,10 +33,17 @@
 U8G2_SSD1306_128X64_NONAME_F_4W_SW_SPI u8g2(U8G2_R0, /* clock=*/ D0, /* data=*/ D1, /* cs=*/ D4, /* dc=*/ D3, /* reset=*/ D2);
 char draw[30];
 char ssid[30];
+char mac[30];
+
+#define LINE0 11
+#define LINE1 22
+#define LINE2 33
+#define LINE4 44
+#define LINE5 55
 
 void setup() {
   u8g2.begin();
-  u8g2.setFont(u8g2_font_ncenB10_tr);
+  u8g2.setFont(u8g2_font_helvR08_tr);
 
   u8g2.clearBuffer();
   u8g2.drawStr(0, 12, "Arduino Slovakia");
@@ -91,14 +98,24 @@ void loop() {
         ssid[dl-2]='?';
         ssid[dl-1]='?';
       }
+      strcpy(mac,WiFi.BSSIDstr(i).c_str());
+      dl=strlen(mac);
+      if(dl>2) { // hide some details
+        mac[dl-2]='?';
+        mac[dl-1]='?';
+      }
       u8g2.clearBuffer();
       sprintf(draw,"Net: %d/%d",i+1,n);
-      u8g2.drawStr(0, 12, draw);
-      u8g2.drawStr(0, 26, ssid);
+      u8g2.drawStr(1, LINE0, draw);
+      u8g2.drawStr(1, LINE1, ssid);
+      u8g2.drawStr(1, LINE2, mac);
       sprintf(draw,"Sig: %d dBm",WiFi.RSSI(i));
-      u8g2.drawStr(0, 40, draw);
+      u8g2.drawStr(1, LINE4, draw);
+      sprintf(draw,"Ch: %d",WiFi.channel(i));
+      u8g2.drawStr(80, LINE4, draw);
       sprintf(draw,"Enc: %s",getEncryptionType(WiFi.encryptionType(i)));
-      u8g2.drawStr(0, 54, draw);
+      u8g2.drawStr(1, LINE5, draw);
+      u8g2.drawFrame(0,0,128,64);
       u8g2.sendBuffer();
       
       delay(2000);
