@@ -1,21 +1,33 @@
-/*
+/**
+   Arduino ESP8266 UDP NTP Client
+   v. 1.1
+   Copyright (C) 2017 Robert Ulbricht
+   http://www.arduinoslovakia.eu
 
-  Udp NTP Client
+   Get the time from a Network Time Protocol (NTP) time server.
+   Convert time to few localtimes.
 
-  Get the time from a Network Time Protocol (NTP) time server
-  Demonstrates use of UDP sendPacket and ReceivePacket
-  For more on NTP time servers and the messages needed to communicate with them,
-  see http://en.wikipedia.org/wiki/Network_Time_Protocol
+   IDE: 1.8.2 or higher
+   Board: NodeMCU 0.9 (ESP-12)
 
-  created 4 Sep 2010
-  by Michael Margolis
-  modified 9 Apr 2012
-  by Tom Igoe
-  updated for the ESP8266 12 Apr 2015
-  by Ivan Grokhotkov
+   Libraries:
+   TimeLib: https://github.com/PaulStoffregen/Time
+   Version: 1.5 or higher
+   Timezone: https://github.com/JChristensen/Timezone
+   Version: 1.0 or higher
 
-  This code is in the public domain.
+   This program is free software: you can redistribute it and/or modify
+   it under the terms of the GNU General Public License as published by
+   the Free Software Foundation, either version 3 of the License, or
+   (at your option) any later version.
 
+   This program is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+   GNU General Public License for more details.
+
+   You should have received a copy of the GNU General Public License
+   along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
 #include <ESP8266WiFi.h>
@@ -23,6 +35,8 @@
 #include <TimeLib.h>
 #include <Timezone.h>
 
+// Safe stored password
+// http://www.arduinoslovakia.eu/blog/2017/6/vlozenie-definicie-makra-do-programu-v-arduine?lang=en
 #if defined(_SSID)
 const char* ssid = _SSID;
 const char* pass = _PWD;
@@ -61,7 +75,7 @@ Timezone usET(usEDT, usEST);
 void setup()
 {
   Serial.begin(115200);
-  Serial.println();
+  delay(500);
   Serial.println();
 
   // We start by connecting to a WiFi network
