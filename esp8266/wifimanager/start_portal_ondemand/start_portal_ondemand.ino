@@ -4,7 +4,7 @@
    Copyright (C) 2017 Robert Ulbricht
    http://www.arduinoslovakia.eu
 
-   Start config portal.
+   Start config portal on button push.
 
    IDE: 1.8.2 or higher
    Board: NodeMCU 0.9 (ESP-12)
@@ -32,15 +32,24 @@
 #include <ESP8266WebServer.h>
 #include <WiFiManager.h>
 
+#define TRIGGER_PIN 0
+
 void setup() {
   Serial.begin(115200);
-
-  WiFiManager wifiManager;
-  wifiManager.startConfigPortal("ArduinoAP");
-
-  //if you get here you have connected to the WiFi
-  Serial.println("connected...");
+  pinMode(TRIGGER_PIN, INPUT_PULLUP);
 }
 
 void loop() {
+  if(digitalRead(TRIGGER_PIN) == LOW) {
+    WiFiManager wifiManager;
+
+    if(!wifiManager.startConfigPortal("ArduinoAP","secret_password") {
+      Serial.println("failed to connect and hit timeout");
+      delay(3000);
+      //reset and try again
+      ESP.reset();
+      delay(5000);
+    }
+    Serial.println("connected...");
+  }
 }

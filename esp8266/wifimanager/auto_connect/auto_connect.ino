@@ -28,14 +28,11 @@
 */
 
 #include <ESP8266WiFi.h>
-
-//needed for library
 #include <DNSServer.h>
 #include <ESP8266WebServer.h>
 #include <WiFiManager.h>
 
 void setup() {
-  // put your setup code here, to run once:
   Serial.begin(115200);
 
   WiFiManager wifiManager;
