@@ -4,6 +4,9 @@
    Copyright (C) 2017 Robert Ulbricht
    http://www.arduinoslovakia.eu
 
+   Based on
+   https://arduino.stackexchange.com/questions/12718/increase-pwm-bit-resolution
+
    Timer1 is set to mode 14 PWM, maximum resolution.
    Connect LED and resistor 1k to pin 9. LED flashes a bit,
    but if the 15-bit resolution is selected, the blinking disappears.

@@ -4,6 +4,9 @@
    Copyright (C) 2017 Robert Ulbricht
    http://www.arduinoslovakia.eu
 
+   Based on
+   https://arduino.stackexchange.com/questions/12718/increase-pwm-bit-resolution
+
    Timer1 is set to mode 14 PWM. You can change resolution and brightness.
    Connect LED and resistor 1k to pin 9. Read the instructions on serial port.
 
