@@ -49,7 +49,7 @@ void setupPWM16() {
   TCCR1A = _BV(COM1A1) | _BV(COM1B1)  /* non-inverting PWM */
         | _BV(WGM11);                 /* mode 14: fast PWM, TOP=ICR1 */
   TCCR1B = _BV(WGM13) | _BV(WGM12)
-        | _BV(CS11);                  /* prescaler 1 */
+        | _BV(CS10);                  /* prescaler 1 */
   ICR1 = icr;                         /* TOP counter value (freeing OCR1A*/
 }
 
