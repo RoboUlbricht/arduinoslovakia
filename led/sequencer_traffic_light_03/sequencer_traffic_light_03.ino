@@ -52,7 +52,7 @@ const char PROGMEM sequence[] = {
   0b01000100, // red, orange
   0b01000100,
   0b00100100, // red, red
-  0b00101000, // orange, red
+  0b00101100, // red+orange, red
   0b00110000, // green, red
   0b00110000,
   0b00110000,
@@ -66,7 +66,7 @@ const char PROGMEM sequence[] = {
   0b00101000, // orange, red
   0b00101000,
   0b00100100, // red, red
-  0b01000100, // red, orange
+  0b01100100, // red, red+orange
 };
 const int sequence_length = sizeof(sequence) / sizeof(char);
 
