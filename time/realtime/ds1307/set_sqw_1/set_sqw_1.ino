@@ -91,7 +91,7 @@ class DS1307RTCex : public DS1307RTC {
       }
     }
 
-    void setSQW1(uint8_t value) {
+    void setSQW(uint8_t value) {
       Wire.beginTransmission(DS1307_CTRL_ID);
       Wire.write(7);
       Wire.write(value);
@@ -107,18 +107,18 @@ void setup() {
   while (!Serial) ; // wait for serial
   delay(200);
   Serial.println("DS1307RTC Set SQW");
-  Serial.println("-------------------");
+  Serial.println("-----------------");
 
   // off
-  //ex.setSQW1(0x00);
+  //ex.setSQW(0x00);
   // 1Hz
-  ex.setSQW1(0x10);
+  ex.setSQW(0x10);
   // 4.096 kHz
-  //ex.setSQW1(0x11);
+  //ex.setSQW(0x11);
   // 8.192 kHz
-  //ex.setSQW1(0x12);
+  //ex.setSQW(0x12);
   // 32.768 kHz
-  //ex.setSQW1(0x13);
+  //ex.setSQW(0x13);
 
   if (ex.readRam())
     ex.dump();
