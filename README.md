@@ -1,5 +1,8 @@
 # Arduino Slovakia
-Arduino examples from www.arduinoslovakia.eu.
+Arduino examples from my blog.
+- SK: [slovenské verzia](https://www.arduinoslovakia.eu)
+- CS: [česká verze](https://www.arduinoslovakia.eu?lang=cs)
+- EN: [english version](https://www.arduinoslovakia.eu?lang=en)
 
 ### ATtiny85
 ATtiny85 sketches.
