@@ -8,6 +8,9 @@
 
    IDE: 1.8.2 or higher
    Board: Arduino Pro Mini
+   
+   Packages:
+   serialport: 4.0.7
 
    This program is free software: you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by
