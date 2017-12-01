@@ -1,6 +1,6 @@
 /**
    Serial communication between multiple Arduinos and Node.js
-   v. 1.0
+   v. 1.1
    Copyright (C) 2017 Robert Ulbricht
    https://www.arduinoslovakia.eu
 
@@ -50,17 +50,18 @@ serialport.list(function (err, p) {
   });
 
   rl.prompt();
-  
+
   rl.on('line', function(line) {
-    var indexes = line.split(',').map(function(item) {
-      return item.trim();
-    });
+    var indexes = line.split(',')
+      .map(function(item) {
+        return item.trim();
+      });
     //console.log(indexes);
-      
-    indexes.forEach(function(i) {            
+
+    indexes.forEach(function(i) {
       if(i<idx) {
         console.log('Opening ' + ports[Number(i)]);
-      
+
         const port = new serialport(ports[Number(i)], {
           baudRate: 9600
           });
@@ -75,29 +76,27 @@ serialport.list(function (err, p) {
         port.on('error', function(e) {
           console.error(e.message);
           process.exit(0);
-        });  
+        });
         
         port.on('open', function() {
-          console.log('Serial Port ' + this.path + ' Opened');
+          console.log('Serial port ' + this.path + ' opened');
         });
 
         port.on('close', function(err) {
-          console.log('Serial Port Closed: ' + err);
+          console.log('Serial port closed: ' + err);
           process.exit(0);
         });
-  
+
       } else {
         console.error('ERROR: Wrong port number');
         process.exit(0);
       }
-    });  
+    });
   });
-  
+
   rl.on('close', function() {
-  console.log('Bye!');
-  process.exit(0);
-});
-  
-});
+    console.log('Bye!');
+    process.exit(0);
+  });
 
-
+});
