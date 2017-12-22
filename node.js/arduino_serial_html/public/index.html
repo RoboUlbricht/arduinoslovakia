@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Arduino Serial HTML</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js"></script>
+  <script src="javascripts/arduino_serial.js"></script>
+  <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+</head>
+
+<body>
+  <div ng-app="arduinoSerialApp" ng-controller="arduinoSerialCtrl">
+  <div class="container">
+  <div class="row">
+    <h1>Arduino Serial HTML</h1>
+      <p>Port: <select ng-model="p" ng_options="port.comName for port in ports"></select> <button ng-click="doConnect()">Connect</button> <button ng-click="doDisconnect()">Disconnect</button></p>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-6">
+      <pre>data: {{data}}</pre>
+      <pre>{{lines | json}}</pre>
+    </div>
+    <div class="col-sm-6">
+      <pre>{{ports | json}}</pre>
+    </div>
+  </div>
+
+  </div>
+  </div>
+</body>
+
+</html>
