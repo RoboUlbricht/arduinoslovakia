@@ -1,6 +1,6 @@
 # Arduino Slovakia
 Arduino examples from my blog.
-- SK: [slovenské verzia](https://www.arduinoslovakia.eu)
+- SK: [slovenská verzia](https://www.arduinoslovakia.eu)
 - CS: [česká verze](https://www.arduinoslovakia.eu?lang=cs)
 - EN: [english version](https://www.arduinoslovakia.eu?lang=en)
 
