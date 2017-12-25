@@ -22,3 +22,6 @@ Several Arduinos with serialport v. 6.0.0
 ## arduino_serial_html
 Arduino, Node.js, Angular, Socket.IO. Communication between Arduino and HTML
 page through Node.js server.
+- SK: [slovenská verzia](https://www.arduinoslovakia.eu/blog/2017/12/angular-javascript-aplikacia-a-arduino)
+- CS: [česká verze](https://www.arduinoslovakia.eu/blog/2017/12/angular-javascript-aplikacia-a-arduino?lang=cs)
+- EN: [english version](https://www.arduinoslovakia.eu/blog/2017/12/angular-javascript-aplikacia-a-arduino?lang=en)
