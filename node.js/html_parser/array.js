@@ -1,5 +1,5 @@
 /**
- * Andrej Sl·dkoviË from HTTP to C++
+ * Andrej Sl√°dkoviƒç from HTTP to C++
  * v. 1.0
  * Copyright (C) 2017 Robert Ulbricht
  * https://www.arduinoslovakia.eu
