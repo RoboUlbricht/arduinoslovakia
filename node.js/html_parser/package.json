@@ -1,0 +1,16 @@
+{
+  "name": "html_parser",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "text": "node index.js",
+    "last": "node array.js",
+    "cpp": "node tocpp.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.2"
+  }
+}
