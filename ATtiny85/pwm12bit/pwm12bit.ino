@@ -5,6 +5,9 @@
  * https://www.arduinoslovakia.eu
  *
  * Based on http://www.technoblogy.com/show?1NGL
+ *          David Johnson-Davies - www.technoblogy.com
+ *          Unknown licence (? CC BY 4.0)
+ *          
  * Core: https://github.com/SpenceKonde/ATTinyCore
  *
  * This program is free software: you can redistribute it and/or modify
