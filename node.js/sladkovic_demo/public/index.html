@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+  <title>Andrej Sládkovič - Marína</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
+  <script src="sladkovic.js"></script>
+</head>
+
+<body>
+  <div ng-app="sladkovicApp" ng-controller="sladkovicCtrl">
+  <div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <h1>Andrej Sládkovič - Marína</h1>
+      <p><button ng-click="doFirst()">Prvý</button> <button ng-click="doPrev()">Predchádzajúci</button> <button ng-click="doNext()">Nasledujúci</button> <button ng-click="doLast()">Posledný</button></p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-12">
+      <p>Verš {{verse}}/{{maxverse}}</p>
+      <pre>{{text}}</pre>
+    </div>
+  </div>
+
+  </div>
+  </div>
+</body>
+
+</html>
