@@ -4,10 +4,6 @@
    Copyright (C) 2018 Robert Ulbricht
    https://www.arduinoslovakia.eu
 
-   Arduino sends data from temperature sensors DS18B20.
-   Node.js receives data and converts them into the object.
-   Use 2-3 sensors to see the parsed data.
-
    IDE: 1.8.5 or higher
    Board: Arduino or Arduino Pro Mini
    
