@@ -1,6 +1,6 @@
 /**
    Serial communication between Arduino and Node.js
-   v. 1.0
+   v. 1.1
    Copyright (C) 2018 Robert Ulbricht
    https://www.arduinoslovakia.eu
 
@@ -34,10 +34,10 @@ void setup() {
 }
 
 void loop() {
-  while(crash_count) {
-  Serial.println(millis());
-  delay(1000);
-  crash_count--;
+  while (crash_count) {
+    Serial.println(millis());
+    delay(1000);
+    crash_count--;
   }
 }
 
