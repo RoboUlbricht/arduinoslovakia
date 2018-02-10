@@ -25,3 +25,27 @@ page through Node.js server.
 - SK: [slovenská verzia](https://www.arduinoslovakia.eu/blog/2017/12/angular-javascript-aplikacia-a-arduino)
 - CS: [česká verze](https://www.arduinoslovakia.eu/blog/2017/12/angular-javascript-aplikacia-a-arduino?lang=cs)
 - EN: [english version](https://www.arduinoslovakia.eu/blog/2017/12/angular-javascript-aplikacia-a-arduino?lang=en)
+
+## html_parser
+How to get Andrej Sládkovič into C++.
+- SK: [slovenská verzia](https://www.arduinoslovakia.eu/blog/2017/12/ako-dostat-andreja-sladkovica-do-c++)
+- CS: [česká verze](https://www.arduinoslovakia.eu/blog/2017/12/ako-dostat-andreja-sladkovica-do-c++?lang=cs)
+- EN: [english version](https://www.arduinoslovakia.eu/blog/2017/12/ako-dostat-andreja-sladkovica-do-c++?lang=en)
+
+## sladkovic_demo
+Andrej Sládkovič, AngularJS and Node.js.
+- SK: [slovenská verzia](https://www.arduinoslovakia.eu/blog/2018/1/andrej-sladkovic,-angularjs-a-nodejs)
+- CS: [česká verze](https://www.arduinoslovakia.eu/blog/2018/1/andrej-sladkovic,-angularjs-a-nodejs?lang=cs)
+- EN: [english version](https://www.arduinoslovakia.eu/blog/2018/1/andrej-sladkovic,-angularjs-a-nodejs?lang=en)
+
+## arduino_ds18b20_parser
+Parsing the output from Arduino using Node.js.
+- SK: [slovenská verzia](https://www.arduinoslovakia.eu/blog/2018/1/parsovanie-vystupu-z-arduina-pomocou-nodejs)
+- CS: [česká verze](https://www.arduinoslovakia.eu/blog/2018/1/parsovanie-vystupu-z-arduina-pomocou-nodejs?lang=cs)
+- EN: [english version](https://www.arduinoslovakia.eu/blog/2018/1/parsovanie-vystupu-z-arduina-pomocou-nodejs?lang=en)
+
+##arduino_reopen_after_crash
+Keep track of uninterrupted Arduino communication using Node.js.
+- SK: [slovenská verzia](https://www.arduinoslovakia.eu/blog/2018/2/sledovanie-nepretrzitej-komunikacie-arduina-pomocou-nodejs)
+- CS: [česká verze](https://www.arduinoslovakia.eu/blog/2018/2/sledovanie-nepretrzitej-komunikacie-arduina-pomocou-nodejs?lang=cs)
+- EN: [english version](https://www.arduinoslovakia.eu/blog/2018/2/sledovanie-nepretrzitej-komunikacie-arduina-pomocou-nodejs?lang=en)
