@@ -44,7 +44,7 @@ Parsing the output from Arduino using Node.js.
 - CS: [česká verze](https://www.arduinoslovakia.eu/blog/2018/1/parsovanie-vystupu-z-arduina-pomocou-nodejs?lang=cs)
 - EN: [english version](https://www.arduinoslovakia.eu/blog/2018/1/parsovanie-vystupu-z-arduina-pomocou-nodejs?lang=en)
 
-##arduino_reopen_after_crash
+## arduino_reopen_after_crash
 Keep track of uninterrupted Arduino communication using Node.js.
 - SK: [slovenská verzia](https://www.arduinoslovakia.eu/blog/2018/2/sledovanie-nepretrzitej-komunikacie-arduina-pomocou-nodejs)
 - CS: [česká verze](https://www.arduinoslovakia.eu/blog/2018/2/sledovanie-nepretrzitej-komunikacie-arduina-pomocou-nodejs?lang=cs)
