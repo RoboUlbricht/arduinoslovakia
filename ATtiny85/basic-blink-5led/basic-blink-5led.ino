@@ -34,7 +34,7 @@
 //            GND  4|    |5  PB0 (D 0) led
 //                  +----+
 
-const int leds[] = {0, 1, 2, 3, 4, 5};
+const int leds[] = {0, 1, 2, 3, 4};
 const int ledcount = sizeof(leds) / sizeof(int);
 int step = 0;
 const int sleep = 200;
