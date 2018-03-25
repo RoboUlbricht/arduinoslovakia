@@ -87,7 +87,7 @@ void NeoFire::Draw()
 {
 Clear();
 
-int pot = analogRead(2);
+int pot = analogRead(A2);
 pot = map(pot, 0, 1023, 0, RANDOM_MAX);
 
 for(int i=0;i<CNT;i++)
