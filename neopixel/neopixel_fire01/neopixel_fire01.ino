@@ -2,6 +2,13 @@
  * Arduino Uno - NeoPixel Fire
  * v. 1.0
  * Copyright (C) 2015 Robert Ulbricht
+ * https://www.arduinoslovakia.eu
+ *
+ * IDE: 1.8.5 or higher
+ * Board: Arduino or Arduino Pro Mini
+ *
+ * Libraries
+ * NeoPixel: https://github.com/adafruit/Adafruit_NeoPixel
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
