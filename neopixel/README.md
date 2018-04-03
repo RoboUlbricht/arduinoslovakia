@@ -15,3 +15,6 @@ NeoPixel Ring simulates the fire.
 ![NeoPixel Fire](https://www.arduinoslovakia.eu/image?name=arduino_neopixel_fire_3.jpg "NeoPixel Fire")
 * https://www.arduinoslovakia.eu/blog/2015/9/simulacia-ohna
 * https://www.youtube.com/watch?v=G9sKlOzzYS0
+
+### NeoPixel HSV Experiments
+Random HSV tests.
