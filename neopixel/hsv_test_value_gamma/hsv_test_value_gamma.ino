@@ -44,8 +44,8 @@ Adafruit_NeoPixel strip = Adafruit_NeoPixel(CNT, PIN, NEO_GRB + NEO_KHZ800);
 void setup() {
   strip.begin();
   // hue - red
-  // saturation - 255-0
-  // value - low
+  // saturation - max
+  // value - 0-255
   for (int i = 0; i < CNT; i++)
     strip.setPixelColor(i, getPixelColorHsv(i, 0, 255, strip.gamma8(i*(255/CNT))));
   strip.show();
