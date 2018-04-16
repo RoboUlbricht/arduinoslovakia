@@ -18,3 +18,7 @@ NeoPixel Ring simulates the fire.
 
 ### NeoPixel HSV Experiments
 Random HSV tests.
+![NeoPixel Ring Clock](https://www.arduinoslovakia.eu/images/neopixel/neopixel_hsv_rainbow.jpg "NeoPixel Ring Clock")
+- SK: [slovenská verzia](https://www.arduinoslovakia.eu/blog/2018/4/neopixel-ring-hsv-test)
+- CS: [česká verze](https://www.arduinoslovakia.eu/blog/2018/4/neopixel-ring-hsv-test?lang=cs)
+- EN: [english version](https://www.arduinoslovakia.eu/blog/2018/4/neopixel-ring-hsv-test?lang=en)
