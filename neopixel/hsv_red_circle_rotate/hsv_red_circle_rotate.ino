@@ -52,7 +52,7 @@ void loop() {
   // saturation - max
   // value - 0-255
   for (int i = 0; i < CNT; i++)
-    strip.setPixelColor((i+position)%CNT, getPixelColorHsv(i, 0, 255, strip.gamma8(i*(255/CNT))));
+    strip.setPixelColor((i + position) % CNT, getPixelColorHsv(i, 0, 255, strip.gamma8(i * (255 / CNT))));
   strip.show();
   position++;
   position %= CNT;

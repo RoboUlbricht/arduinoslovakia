@@ -1,5 +1,5 @@
 /**
-  Arduino Uno - NeoPixel HSV Rainbow Circle Rotation With Gamma Correction
+  Arduino Uno - NeoPixel HSV Rainbow Rotation
   v. 1.0
   Copyright (C) 2018 Robert Ulbricht
   https://www.arduinoslovakia.eu
@@ -40,7 +40,6 @@
 #define MAXHUE 256*6
 
 int position = 0;
-int hue = 0;
 
 Adafruit_NeoPixel strip = Adafruit_NeoPixel(CNT, PIN, NEO_GRB + NEO_KHZ800);
 
@@ -49,15 +48,13 @@ void setup() {
 }
 
 void loop() {
-  // hue - red
-  // saturation - max
-  // value - 0-255
+  // hue - whole circle
+  // saturation - maximum
+  // value - very low
   for (int i = 0; i < CNT; i++)
-    strip.setPixelColor((i + position) % CNT, getPixelColorHsv(i, hue, 255, strip.gamma8(i * (255 / CNT))));
+    strip.setPixelColor((i + position) % CNT, getPixelColorHsv(i, i * (MAXHUE / CNT), 255, 10));
   strip.show();
   position++;
   position %= CNT;
-  hue += 2;
-  hue %= MAXHUE;
   delay(50);
 }
