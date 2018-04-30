@@ -1,6 +1,6 @@
 /*
   Node.js - Weather forecast from https://openweathermap.org/
-  v. 1.0
+  v. 1.1
   Copyright (C) 2018 Robert Ulbricht
   https://www.arduinoslovakia.eu
 
@@ -25,22 +25,20 @@ module.exports = class OpenWeatherMap {
 	}
 
 	getCurrentWeatherByCityName(cityName, callback) {
-		var self = this;
 		request.get(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=${this.config.units}&APPID=${this.config.APPID}`,
 			(err, data) => {
-		    self.parseResponse(err, data, callback);
+		    this.parseResponse(err, data, callback);
 		})
 	};
 
 	getCurrentWeatherByCityID(cityId, callback) {
-		var self = this;
 		request.get(`https://api.openweathermap.org/data/2.5/weather?id=${cityId}&units=${this.config.units}&APPID=${this.config.APPID}`,
 			(err, data) => {
-		    self.parseResponse(err, data, callback);
+		    this.parseResponse(err, data, callback);
 		})
 	};
 
-	parseResponse(err, data, callback){
+	parseResponse(err, data, callback) {
 		var error = null;
 		var response = null;
 	
