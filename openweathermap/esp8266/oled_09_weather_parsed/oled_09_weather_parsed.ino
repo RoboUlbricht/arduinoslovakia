@@ -1,6 +1,6 @@
 /**
   ESP8266 -  Weather forecast from https://openweathermap.org/
-  v. 1.0
+  v. 1.1
   Copyright (C) 2018 Robert Ulbricht
   https://www.arduinoslovakia.eu
 

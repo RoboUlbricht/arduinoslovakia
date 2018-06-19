@@ -1,7 +1,7 @@
-// ESP8266 Core: 2.4.1
+// ESP8266 Core: 2.3.0
 // Windows
 //
-// Find file 'c:\Users\[your name]\AppData\Local\Arduino15\packages\esp8266\hardware\esp8266\2.4.1\platform.txt'. 
+// Find file 'c:\Users\[your name]\AppData\Local\Arduino15\packages\esp8266\hardware\esp8266\2.3.0\platform.txt'. 
 // In the same directory create file 'platfom.local.txt'. Insert text
 // 'compiler.cpp.extra_flags=-D_SSID="xxx" -D_PWD="xxx" -D_APPID="xxx"' into the file.
 //
