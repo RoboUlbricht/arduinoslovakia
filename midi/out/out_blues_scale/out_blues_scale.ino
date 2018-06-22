@@ -1,6 +1,6 @@
 /**
   Arduino MIDI - Korg Volca FM - Blues Scale
-  v. 1.0
+  v. 1.1
   Copyright (C) 2018 Robert Ulbricht
   https://www.arduinoslovakia.eu
 
@@ -32,7 +32,9 @@
 
 MIDI_CREATE_DEFAULT_INSTANCE();
 const int channel = 1;
-const int notes[] = {60, 63, 65, 66, 67, 70, 72};
+//                   C   Eb  F   Gb  G   Hb  C   C   Hb  G   Gb  F   Eb  C
+const int notes[] = {60, 63, 65, 66, 67, 70, 72, 72, 70, 67, 66, 65, 63, 60};
+const int cnt = sizeof(notes) / sizeof(int);
 
 void setup() {
   MIDI.begin();
@@ -40,11 +42,10 @@ void setup() {
 
 void loop() {
   int note;
-  for (int i = 0; i < sizeof(notes) / sizeof(int); i++) {
+  for (int i = 0; i < cnt; i++) {
     note = notes[i];
-    MIDI.sendNoteOn(note, 100, channel);
+    MIDI.sendNoteOn(note, 64, channel);
     delay(400);
-    MIDI.sendNoteOff(note, 100, channel);
+    MIDI.sendNoteOff(note, 64, channel);
   }
-  delay(2000);
 }
