@@ -24,34 +24,45 @@
   along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include <SPI.h>
+#define LED_COUNT 16
 
-//Pin connected to ST_CP of 74HC595
-// SS
-int latchPin = 10;
+const int ShiftPWM_latchPin = 10;
+const bool ShiftPWM_invertOutputs = false;
+const bool ShiftPWM_balanceLoad = false;
 
-//Pin connected to SH_CP of 74HC595
-// SCK
-int clockPin = 13;
+#include <ShiftPWM.h>   // include ShiftPWM.h after setting the pins!
 
-// Pin connected to DS of 74HC595
-// MOSI
-int dataPin = 11;
+unsigned char maxBrightness = 255;
+unsigned char pwmFrequency = 75;
+int numRegisters = 2;
 
 void setup() {
-  SPI.begin();
+  Serial.begin(9600);
+
+  ShiftPWM.SetAmountOfRegisters(numRegisters);
+  ShiftPWM.SetPinGrouping(1);
+  ShiftPWM.Start(pwmFrequency, maxBrightness);
+  ShiftPWM.PrintInterruptLoad();
 }
 
+unsigned char val[LED_COUNT] = {
+  0, 0, 0, 0, 0, 0, 0, 0,
+  0, 0, 0, 0, 0, 0, 0, 0
+};
+
 void loop() {
-  uint16_t data;
-  for (int i = 0; i < 16; i++) {
-    data = 1 << i;
-    digitalWrite(latchPin, LOW);
-    SPI.transfer16(data);
-    digitalWrite(latchPin, HIGH);
+  for (int i = 0; i < LED_COUNT; i++) {
+    for (int j = 0; j < LED_COUNT; j++) {
+      unsigned char v = (i%4) ? 16 : 255;
+      ShiftPWM.SetOne(j, i == j ? v : 0);
+    }
     delay(200);
   }
 }
+
+
+
+
 
 
 
