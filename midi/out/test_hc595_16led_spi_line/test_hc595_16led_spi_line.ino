@@ -1,5 +1,5 @@
 /**
-  Arduino - MIDI sequencer - 4 channel analog test
+  Arduino - MIDI sequencer - 2x74HC595 sequence test
   v. 1.0
   Copyright (C) 2018 Robert Ulbricht
   https://www.arduinoslovakia.eu
@@ -24,18 +24,34 @@
   along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-char buffer[30];
+#include <SPI.h>
+
+//Pin connected to ST_CP of 74HC595
+// SS
+int latchPin = 10;
+
+//Pin connected to SH_CP of 74HC595
+// SCK
+int clockPin = 13;
+
+// Pin connected to DS of 74HC595
+// MOSI
+int dataPin = 11;
 
 void setup() {
-  Serial.begin(9600);
+  SPI.begin();
 }
 
 void loop() {
-  int value0 = analogRead(A0);
-  int value1 = analogRead(A1);
-  int value2 = analogRead(A2);
-  int value3 = analogRead(A3);
-  sprintf(buffer, "%d,%d,%d,%d", value0, value1, value2, value3);
-  Serial.println(buffer);
-  delay(100);
+  uint16_t data;
+  for (int i = 0; i < 16; i++) {
+    data = 1 << i;
+    digitalWrite(latchPin, LOW);
+    SPI.transfer16(data);
+    digitalWrite(latchPin, HIGH);
+    delay(100);
+  }
 }
+
+
+
