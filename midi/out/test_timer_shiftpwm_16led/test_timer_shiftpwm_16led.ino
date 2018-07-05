@@ -1,5 +1,5 @@
 /**
-  Arduino - MIDI sequencer - 2x74HC595 sequence test
+  Arduino - MIDI sequencer - 2x74HC595 + TIMER2 sequence test
   v. 1.0
   Copyright (C) 2018 Robert Ulbricht
   https://www.arduinoslovakia.eu
@@ -12,7 +12,7 @@
 
   Libraries:
   ShiftPWM: https://github.com/elcojacobs/ShiftPWM
-  Version: unknown
+  Version: unknown 
   
   This program is free software: you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
@@ -28,8 +28,15 @@
   along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+// sequencer
+volatile int step = 15;
+volatile int speed = 1;
 #define LED_COUNT 16
 
+// timer2
+volatile int divider = 0;
+
+// timer1
 const int ShiftPWM_latchPin = 10;
 const bool ShiftPWM_invertOutputs = false;
 const bool ShiftPWM_balanceLoad = false;
@@ -40,28 +47,51 @@ unsigned char maxBrightness = 255;
 unsigned char pwmFrequency = 75;
 int numRegisters = 2;
 
-void setup() {
-  Serial.begin(9600);
+void setupTimer2() {
+  noInterrupts();
+  // Clear registers
+  TCCR2A = 0;
+  TCCR2B = 0;
+  TCNT2 = 0;
 
+  // 1000 Hz (16000000/((124+1)*128))
+  OCR2A = 124;
+  // CTC
+  TCCR2A |= (1 << WGM21);
+  // Prescaler 128
+  TCCR2B |= (1 << CS22) | (1 << CS20);
+  // Output Compare Match A Interrupt Enable
+  TIMSK2 |= (1 << OCIE2A);
+  interrupts();
+}
+
+void setup() {
+  //Serial.begin(9600);
+  setupTimer2();
   ShiftPWM.SetAmountOfRegisters(numRegisters);
   ShiftPWM.SetPinGrouping(1);
   ShiftPWM.Start(pwmFrequency, maxBrightness);
-  ShiftPWM.PrintInterruptLoad();
 }
 
 void loop() {
-  for (int i = 0; i < LED_COUNT; i++) {
-    for (int j = 0; j < LED_COUNT; j++) {
-      unsigned char v = (i%4) ? 16 : 255;
-      ShiftPWM.SetOne(j, i == j ? v : 0);
-    }
-    delay(200);
+  for (int j = 0; j < LED_COUNT; j++) {
+    unsigned char v = (step % 4) ? 16 : 255;
+    ShiftPWM.SetOne(j, step == j ? v : 0);
   }
+  delay(20);
+
+  int sp = analogRead(A0);
+  long bpm = map(sp, 0, 1023, 60, 600);
+  noInterrupts();
+  speed = 60000L/bpm;
+  interrupts();
 }
 
-
-
-
-
-
-
+ISR(TIMER2_COMPA_vect) {
+  if (divider == 0) {
+    step++;
+    step %= 16;
+  }
+  divider++;
+  divider %= speed;
+}
