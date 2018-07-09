@@ -19,3 +19,4 @@ https://www.arduinoslovakia.eu/blog/2018/2/attiny85---tlacidla?lang=en
 
 - pwm-all
 - pwm-all-gamma
+- pwm-all-gamma-shift
