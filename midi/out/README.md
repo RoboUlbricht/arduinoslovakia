@@ -10,6 +10,7 @@ https://www.arduinoslovakia.eu/blog/2018/6/arduino-a-midi-out?lang=en
 
 - out_doremi_major
 - out_doremi_minor
+- out_chord_major_cfcg
 
 ## Arduino MIDI sequencer
 
