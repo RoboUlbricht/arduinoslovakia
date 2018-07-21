@@ -13,6 +13,10 @@ https://www.arduinoslovakia.eu/blog/2018/6/arduino-a-midi-out?lang=en
 - out_chord_major_cfcg
 - out_chord_mix_cfag
 
+## Arduino and MIDI out chords with moveable root note
+
+- out_chord_mix_cfag_root
+
 ## Arduino MIDI sequencer
 
 - test_analog_4ch
