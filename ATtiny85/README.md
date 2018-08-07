@@ -16,6 +16,7 @@ https://www.arduinoslovakia.eu/blog/2018/2/attiny85---tlacidla?lang=en
 - basic-button-debounce2
 
 ## ATtiny85 - PWM
+https://www.arduinoslovakia.eu/blog/2018/8/attiny85---pwm?lang=en
 
 - pwm-all
 - pwm-all-gamma

@@ -1,6 +1,6 @@
 /**
   ATtiny85 - PWM on all pins with PWM capability
-  v. 1.0
+  v. 1.1
   Copyright (C) 2018 Robert Ulbricht
   https://www.arduinoslovakia.eu
 
@@ -58,6 +58,8 @@ const byte table[] PROGMEM = {
 
 
 void setup() {
+  for (int i = 0; i < NUM_DIGITAL_PINS; i++)
+    pinMode(i, OUTPUT);
 }
 
 void loop() {
