@@ -1,6 +1,6 @@
 /**
   Arduino Analog Read - Free Running With Interrupt
-  v. 1.0
+  v. 1.1
   Copyright (C) 2018 Robert Ulbricht
   https://www.arduinoslovakia.eu
 
@@ -45,14 +45,19 @@ void setup() {
 }
 
 void loop() {
+  uint8_t SREG_old = SREG;
+  noInterrupts();
+  unsigned long cnt = counter;
+  SREG = SREG_old;
+  
   Serial.print("adc_value = ");
   Serial.print(ADC);
   Serial.print(", counter = ");
-  Serial.print(counter);
+  Serial.print(cnt);
   Serial.print(" (+");
-  Serial.print(counter - counter_last);
+  Serial.print(cnt - counter_last);
   Serial.println(")");
-  counter_last = counter;
+  counter_last = cnt;
   delay(1000);
 }
 
