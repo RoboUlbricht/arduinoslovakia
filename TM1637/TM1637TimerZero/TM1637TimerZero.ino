@@ -1,6 +1,6 @@
 /**
   Arduino TM1637 - Leading Zeros
-  v. 1.0
+  v. 1.1
   Copyright (C) 2018 Robert Ulbricht
   https://www.arduinoslovakia.eu
 
@@ -39,7 +39,6 @@
 // The amount of time (in milliseconds) between tests
 #define TEST_DELAY   1000
 int counter = 0;
-uint8_t data[] = { 0xff, 0xff, 0xff, 0xff };
 
 TM1637Display display(CLK, DIO);
 
