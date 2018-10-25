@@ -22,6 +22,11 @@ https://www.arduinoslovakia.eu/blog/2018/8/attiny85---pwm?lang=en
 - pwm-all-gamma
 - pwm-all-gamma-shift
 
+## ATtiny85 - ADC
+
+- TM1637-adc1
+- TM1637-adc2
+
 ## Cica Mica against ATtiny85
 https://www.arduinoslovakia.eu/blog/2018/7/cica-mica-proti-attiny85?lang=en
 
@@ -49,6 +54,11 @@ https://www.arduinoslovakia.eu/blog/2017/12/10-bitove-pwm-na-attiny85?lang=en
 https://www.arduinoslovakia.eu/page/osvetlenie-rc-modelu-lietadla
 
 - rc_model_blink
+
+## ATtiny85 and TM1637 display
+https://www.arduinoslovakia.eu/blog/2018/10/attiny85-a-displej-tm1637?lang=en
+
+- TM1637Timer
 
 ## Rest
 
