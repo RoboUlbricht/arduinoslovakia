@@ -23,5 +23,6 @@ https://www.arduinoslovakia.eu/blog/2018/10/a/d-prevodnik---free-running-mod?lan
 - free_running_interrupt
 
 ## A/D Converter - 8bit
+https://www.arduinoslovakia.eu/blog/2018/11/a/d-prevodnik---osembitove-rozlisenie?lang=en
 
 - without_blocking_8bit
