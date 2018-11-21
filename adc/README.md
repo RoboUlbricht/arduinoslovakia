@@ -28,5 +28,6 @@ https://www.arduinoslovakia.eu/blog/2018/11/a/d-prevodnik---osembitove-rozliseni
 - without_blocking_8bit
 
 ## A/D Converter - TL431 External voltage reference
+https://www.arduinoslovakia.eu/blog/2018/11/a/d-prevodnik---tl431-externe-referencne-napatie?lang=en
 
 - aref_external
