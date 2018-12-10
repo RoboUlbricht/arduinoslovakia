@@ -1,4 +1,7 @@
 # ATtiny85
+ATtiny85 has 8K of flash memory, 512 SRAM and 512 EEPROM. It may seem a little, but even in such a small memory you can get a pretty big program. ATtiny85 is my favorite microcontroller and only in exceptional situations I replace it with ATtiny84 microcontroller, which has more pins and a bit better peripherals.
+
+https://www.arduinoslovakia.eu/page/attiny85?lang=en
 
 ## ATtiny85 - Blink
 https://www.arduinoslovakia.eu/blog/2017/12/attiny85---blik?lang=en
