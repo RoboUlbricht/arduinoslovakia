@@ -30,6 +30,15 @@
   along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+// ATMEL ATTINY85
+//
+//                  +-\/-+
+//      (D 5) PB5  1|    |8  Vcc
+//  DIO (D 3) PB3  2|    |7  PB2 (D 2) adc1
+//  CLK (D 4) PB4  3|    |6  PB1 (D 1)
+//            GND  4|    |5  PB0 (D 0)
+//                  +----+
+
 #include <TM1637Display.h>
 
 // Module connection pins (Digital Pins)
