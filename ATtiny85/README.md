@@ -26,6 +26,9 @@ https://www.arduinoslovakia.eu/blog/2018/8/attiny85---pwm?lang=en
 - pwm-all-gamma-shift
 
 ## ATtiny85 - ADC
+https://www.arduinoslovakia.eu/blog/2018/12/attiny85---a/d-prevodnik?lang=en
+
+https://www.youtube.com/watch?v=ei754DmixCQ
 
 - TM1637-adc1
 - TM1637-adc2
@@ -60,6 +63,7 @@ https://www.arduinoslovakia.eu/page/osvetlenie-rc-modelu-lietadla
 
 ## ATtiny85 and TM1637 display
 https://www.arduinoslovakia.eu/blog/2018/10/attiny85-a-displej-tm1637?lang=en
+
 https://www.youtube.com/watch?v=lY-UV0lfz7M
 
 - TM1637Timer
