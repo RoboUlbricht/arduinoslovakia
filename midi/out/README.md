@@ -7,6 +7,7 @@ https://www.arduinoslovakia.eu/blog/2018/6/arduino-a-midi-out?lang=en
 - out_blues_scale
 
 ## Arduino and MIDI out chords
+https://www.arduinoslovakia.eu/blog/2018/8/arduino-a-midi-out---akordy?lang=en
 
 - out_doremi_major
 - out_doremi_minor
