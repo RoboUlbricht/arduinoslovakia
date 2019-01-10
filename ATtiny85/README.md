@@ -69,6 +69,7 @@ https://www.youtube.com/watch?v=lY-UV0lfz7M
 - TM1637Timer
 
 ## ATtiny85 thermometer with TM1637 and DS18B20
+https://www.arduinoslovakia.eu/blog/2019/1/attiny85---teplomer-s-ds18b20?lang=en
 
 - TM1637-DS18B20
 
