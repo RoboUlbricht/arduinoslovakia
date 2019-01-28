@@ -1,9 +1,29 @@
 # ESP8266
 
-Arduino IDE compatible microcontroller with Wi-Fi.
+Arduino IDE compatible microcontroller with Wi-Fi. ESP8266 is a cheap Wi-Fi enabled chip. The manufacturer of the chip is  Espressif Systems. The chip originally appeared on the market as AT commands Wi-Fi modem. It should serve as an inexpensive module for other microcontrollers. Later, people discovered it was a powerful microcontroller and can be programmed separately. It can be programmed in many languages, but on this site we will only focus on its integration into the Arduino IDE environment.
 
 https://www.arduinoslovakia.eu/page/esp8266?lang=en
 
 ## ESP8266 OLED 0.9 SSD1306 DS18B20 Thermometer
 
-- ds18b20_oled.ino
+- ds18b20_oled
+
+## ESP8266 - Writing text strings with an HTML page
+https://www.arduinoslovakia.eu/blog/2018/8/esp8266---zapisovanie-textovych-retazcov-s-html-strankou?lang=en
+
+- modern_compiler_string
+
+## ESP8266 WiFi scanner
+https://www.arduinoslovakia.eu/blog/2017/7/esp8266-wifi-skener?lang=en
+
+- wifi_scan_oled
+
+## ESP8266 - Store passwords using WiFiManager
+https://www.arduinoslovakia.eu/blog/2017/7/esp8266---ukladanie-hesiel-pomocou-wifimanager?lang=en
+
+- wifimanager
+
+## ESP8266 - NTP Client and Daylight Saving Time
+https://www.arduinoslovakia.eu/blog/2017/7/esp8266---ntp-klient-a-letny-cas?lang=en
+
+- ntp_client
