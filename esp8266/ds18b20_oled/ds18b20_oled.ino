@@ -1,6 +1,6 @@
 /**
    Arduino ESP8266 OLED 0.9 SSD1306 DS18B20 Thermometer
-   v. 1.0
+   v. 1.1
    Copyright (C) 2019 Robert Ulbricht
    https://www.arduinoslovakia.eu
 
@@ -35,7 +35,6 @@
    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include "ESP8266WiFi.h"
 #include <U8g2lib.h>
 #include <OneWire.h>
 #include <DallasTemperature.h>
@@ -47,8 +46,6 @@ DallasTemperature sensors(&oneWire);
 
 U8G2_SSD1306_128X64_NONAME_F_4W_SW_SPI u8g2(U8G2_R0, /* clock=*/ D1, /* data=*/ D2, /* cs=*/ D5, /* dc=*/ D4, /* reset=*/ D3);
 char draw[30];
-char ssid[30];
-char mac[30];
 
 #define LINE0 11
 #define LINE1 22
@@ -89,6 +86,13 @@ void loop() {
     sprintf(draw, "%.02f °C", temp);
     u8g2.setFont(u8g2_font_helvB18_tf);
     u8g2.drawUTF8(15, LINE4, draw);
+    u8g2.drawFrame(0, 0, 128, 64);
+    u8g2.sendBuffer();
+  }
+  else {
+    u8g2.clearBuffer();
+    u8g2.setFont(u8g2_font_helvR08_tf);
+    u8g2.drawUTF8(1, LINE0, "Error");
     u8g2.drawFrame(0, 0, 128, 64);
     u8g2.sendBuffer();
   }
