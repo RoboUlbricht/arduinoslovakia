@@ -5,6 +5,7 @@ Arduino IDE compatible microcontroller with Wi-Fi. ESP8266 is a cheap Wi-Fi enab
 https://www.arduinoslovakia.eu/page/esp8266?lang=en
 
 ## ESP8266 OLED 0.9 SSD1306 DS18B20 Thermometer
+https://www.arduinoslovakia.eu/blog/2019/1/esp8266---teplomer-s-ds18b20?lang=en
 
 - ds18b20_oled
 
