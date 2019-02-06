@@ -32,3 +32,4 @@ https://www.arduinoslovakia.eu/blog/2017/7/esp8266---ntp-klient-a-letny-cas?lang
 ## ESP8266 - SPIFFS File system
 
 - spiffs_test01
+- spiffs_test02

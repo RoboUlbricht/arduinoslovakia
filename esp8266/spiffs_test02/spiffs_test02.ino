@@ -1,15 +1,15 @@
 /**
-   Arduino ESP8266 SPIFFS Info
-   v. 1.1
+   Arduino ESP8266 SPIFFS Examples
+   v. 1.0
    Copyright (C) 2019 Robert Ulbricht
    https://www.arduinoslovakia.eu
 
-   SPIFFS basic info.
+   SPIFFS basic examples.
 
    IDE: 1.8.6 or higher
    Board: NodeMCU 0.9 (ESP-12)
    Core: https://github.com/esp8266/Arduino
-   Version: 2.5.0
+   Version: 2.4.1
 
    This program is free software: you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by
@@ -35,23 +35,54 @@ void setup() {
   Serial.println(res);
 
   if (res) {
-    FSInfo fs_info;
-    SPIFFS.info(fs_info);
-
-    Serial.print("fs_info.totalBytes = ");
-    Serial.println(fs_info.totalBytes);
-    Serial.print("fs_info.usedBytes = ");
-    Serial.println(fs_info.usedBytes);
-    Serial.print("fs_info.blockSize = ");
-    Serial.println(fs_info.blockSize);
-    Serial.print("fs_info.pageSize = ");
-    Serial.println(fs_info.pageSize);
-    Serial.print("fs_info.maxOpenFiles = ");
-    Serial.println(fs_info.maxOpenFiles);
-    Serial.print("fs_info.maxPathLength = ");
-    Serial.println(fs_info.maxPathLength);
+    testCreate();
+    printFiles();
+    printExample();
+    testDelete();
+    printFiles();
   }
 }
 
 void loop() {
+}
+
+void testCreate() {
+  Serial.println(__FUNCTION__);
+  // create file
+  File f = SPIFFS.open("example.txt", "w");
+  if (!f)
+    Serial.println("File 'example.txt' open failed.");
+  else {
+    f.println("abc");
+    f.println("def");
+    f.println("ghi");
+    f.close();
+  }
+}
+
+void printFiles() {
+  Serial.println(__FUNCTION__);
+  Dir dir = SPIFFS.openDir("");
+  while (dir.next()) {
+    Serial.print(dir.fileName());
+    Serial.print(" - ");
+    Serial.println(dir.fileSize());
+  }
+}
+
+void printExample() {
+  Serial.println(__FUNCTION__);
+  File f = SPIFFS.open("example.txt", "r");
+  if (!f)
+    Serial.println("File 'example.txt' open failed.");
+  else {
+    while (f.available())
+      Serial.write(f.read());
+    f.close();
+  }
+}
+
+void testDelete() {
+  Serial.println(__FUNCTION__);
+  SPIFFS.remove("example.txt");
 }
