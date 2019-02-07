@@ -33,3 +33,4 @@ https://www.arduinoslovakia.eu/blog/2017/7/esp8266---ntp-klient-a-letny-cas?lang
 
 - spiffs_test01
 - spiffs_test02
+- spiffs_test03

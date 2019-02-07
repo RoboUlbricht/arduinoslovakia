@@ -1,0 +1,3 @@
+line1:abcd
+line2:1234
+line3:UTF-8:+ľščťžýáíé

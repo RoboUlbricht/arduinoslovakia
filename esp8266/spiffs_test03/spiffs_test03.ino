@@ -1,15 +1,16 @@
 /**
-   Arduino ESP8266 SPIFFS Examples
+   Arduino ESP8266 SPIFFS Upload plugin
    v. 1.0
    Copyright (C) 2019 Robert Ulbricht
    https://www.arduinoslovakia.eu
 
-   SPIFFS basic examples.
+   SPIFFS upload data with plugin.
 
    IDE: 1.8.6 or higher
    Board: NodeMCU 0.9 (ESP-12)
    Core: https://github.com/esp8266/Arduino
    Version: 2.5.0
+   Plugin: https://github.com/esp8266/arduino-esp8266fs-plugin/releases/download/0.3.0/ESP8266FS-0.3.0.zip
 
    This program is free software: you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by
@@ -35,29 +36,12 @@ void setup() {
   Serial.println(res);
 
   if (res) {
-    testCreate();
     printFiles();
     printExample();
-    testDelete();
-    printFiles();
   }
 }
 
 void loop() {
-}
-
-void testCreate() {
-  Serial.println(__FUNCTION__);
-  // create file
-  File f = SPIFFS.open("example.txt", "w");
-  if (!f)
-    Serial.println("File 'example.txt' open failed.");
-  else {
-    f.println("abc");
-    f.println("def");
-    f.println("ghi");
-    f.close();
-  }
 }
 
 void printFiles() {
@@ -72,17 +56,12 @@ void printFiles() {
 
 void printExample() {
   Serial.println(__FUNCTION__);
-  File f = SPIFFS.open("example.txt", "r");
+  File f = SPIFFS.open("/example.txt", "r");
   if (!f)
-    Serial.println("File 'example.txt' open failed.");
+    Serial.println("File '/example.txt' open failed.");
   else {
     while (f.available())
       Serial.write(f.read());
     f.close();
   }
-}
-
-void testDelete() {
-  Serial.println(__FUNCTION__);
-  SPIFFS.remove("example.txt");
 }
