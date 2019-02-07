@@ -5,13 +5,13 @@ Arduino examples from my blog.
 - EN: [english version](https://www.arduinoslovakia.eu?lang=en)
 
 ### ATtiny85
-ATtiny85 sketches. [more...](/ATtiny85/README.md)
+ATtiny85 sketches. [more...](ATtiny85/README.md)
 
 ### due
 Arduino Due sketches.
 
 ### ESP8266
-ESP8266 sketches. [more...](/ESP8266/README.md)
+ESP8266 sketches. [more...](ESP8266/README.md)
 
 ### Kitchen dimmer
 Smooth LED strip dimmer.
