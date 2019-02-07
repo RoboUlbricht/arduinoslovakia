@@ -11,7 +11,7 @@ ATtiny85 sketches. [more...](ATtiny85)
 Arduino Due sketches.
 
 ### ESP8266
-ESP8266 sketches. [more...](ESP8266)
+ESP8266 sketches. [more...](esp8266)
 
 ### Kitchen dimmer
 Smooth LED strip dimmer.
