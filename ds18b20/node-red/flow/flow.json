@@ -1,0 +1,68 @@
+[
+    {
+        "id": "a9ce7775.8e5768",
+        "type": "tab",
+        "label": "DS18B20",
+        "disabled": false,
+        "info": "Test of DS18B20."
+    },
+    {
+        "id": "6d76376a.619e08",
+        "type": "serial in",
+        "z": "a9ce7775.8e5768",
+        "name": "Arduino",
+        "serial": "b16254df.257b98",
+        "x": 166,
+        "y": 174,
+        "wires": [
+            [
+                "bade0fc1.3bd6e"
+            ]
+        ]
+    },
+    {
+        "id": "de66e909.0c0018",
+        "type": "debug",
+        "z": "a9ce7775.8e5768",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 636,
+        "y": 159,
+        "wires": []
+    },
+    {
+        "id": "bade0fc1.3bd6e",
+        "type": "function",
+        "z": "a9ce7775.8e5768",
+        "name": "ArduinoParse",
+        "func": "try {\nlet p = msg.payload;\np = p.replace('\\r\\n', '');\n//node.log(p);\np = p.split(';');\nmsg.payload = {\n    id: p[0],\n    value: parseFloat(p[1])\n};\n} catch(e) {\n    node.error(e);\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 417,
+        "y": 229,
+        "wires": [
+            [
+                "de66e909.0c0018"
+            ]
+        ]
+    },
+    {
+        "id": "b16254df.257b98",
+        "type": "serial-port",
+        "z": "",
+        "serialport": "COM6",
+        "serialbaud": "9600",
+        "databits": "8",
+        "parity": "none",
+        "stopbits": "1",
+        "newline": "\\n",
+        "bin": "false",
+        "out": "char",
+        "addchar": false,
+        "responsetimeout": "10000"
+    }
+]
