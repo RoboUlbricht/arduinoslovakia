@@ -1,6 +1,6 @@
 /**
   ESP8266 - Basic HTTP server with one page
-  v. 1.0
+  v. 1.1
   Copyright (C) 2019 Robert Ulbricht
   https://www.arduinoslovakia.eu
 
@@ -24,7 +24,6 @@
 */
 
 #include <ESP8266WiFi.h>
-//#include <WiFiClient.h>
 #include <ESP8266WebServer.h>
 #include "arduino_secret.h"
 
