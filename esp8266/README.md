@@ -44,7 +44,7 @@ https://www.arduinoslovakia.eu/blog/2019/3/esp8266---http-server-s-jednou-strank
 - simple_http_server_onepage.ino
 
 ### ESP8266 - HTTP responsive design
-
+https://www.arduinoslovakia.eu/blog/2019/4/esp8266---http-server-a-responzivny-dizajn?lang=en
 
 - simple_http_server_onepage_responsive.ino
 
