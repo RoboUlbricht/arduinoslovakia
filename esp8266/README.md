@@ -50,4 +50,4 @@ https://www.arduinoslovakia.eu/blog/2019/4/esp8266---http-server-a-responzivny-d
 
 ### ESP8266 - Basic HTTP server with more pages
 
--
+- simple_http_server_multiplepages_responsive.ino
