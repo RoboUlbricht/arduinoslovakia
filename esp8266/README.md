@@ -41,18 +41,23 @@ https://www.arduinoslovakia.eu/blog/2019/2/esp8266---suborovy-system-spiffs?lang
 ### ESP8266 - Basic HTTP server with one page
 https://www.arduinoslovakia.eu/blog/2019/3/esp8266---http-server-s-jednou-strankou?lang=en
 
-- simple_http_server_onepage.ino
+- simple_http_server_onepage
 
 ### ESP8266 - HTTP responsive design
 https://www.arduinoslovakia.eu/blog/2019/4/esp8266---http-server-a-responzivny-dizajn?lang=en
 
-- simple_http_server_onepage_responsive.ino
+- simple_http_server_onepage_responsive
 
 ### ESP8266 - Basic HTTP server with more pages
 https://www.arduinoslovakia.eu/blog/2019/4/esp8266---http-server-s-viac-strankami?lang=en
 
-- simple_http_server_multiplepages_responsive.ino
+- simple_http_server_multiplepages_responsive
 
 ### ESP8266 - Basic HTTP server with more pages in SPIFFS
+https://www.arduinoslovakia.eu/blog/2019/4/esp8266---http-server-s-viac-strankami-v-spiffs?lang=en
 
-- simple_http_server_multiplepages_responsive_spiffs.ino
+- simple_http_server_multiplepages_responsive_spiffs
+
+### ESP8266 - Basic HTTP server with favicon.ico and error handling
+
+- simple_http_server_favicon
