@@ -1,6 +1,6 @@
 /**
   ESP8266 - Basic HTTP server with ESP8266
-  v. 1.0
+  v. 1.1
   Copyright (C) 2019 Robert Ulbricht
   https://www.arduinoslovakia.eu
 
@@ -90,7 +90,7 @@ void setup(void) {
   sensors.begin();
   SPIFFS.begin();
 
-  server.serveStatic("/favicon.ico", SPIFFS, "/favicon.ico");
+  server.serveStatic("/favicon.png", SPIFFS, "/favicon.png");
   server.on("/", handleRoot);
 
   server.onNotFound([]() {
