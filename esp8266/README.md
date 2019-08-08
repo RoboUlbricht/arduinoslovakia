@@ -62,3 +62,7 @@ https://www.arduinoslovakia.eu/blog/2019/4/esp8266---http-server-s-viac-strankam
 https://www.arduinoslovakia.eu/blog/2019/4/esp8266---http-server,-favicon-a-osetrenie-chyb?lang=en
 
 - simple_http_server_favicon
+
+### ESP8266 - Basic HTTP server with DS18B20
+
+- simple_http_server_ds18b20
