@@ -1,0 +1,122 @@
+[
+    {
+        "id": "be424c13.3189",
+        "type": "tab",
+        "label": "ESP8266",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "4598943f.86e8b4",
+        "type": "http in",
+        "z": "be424c13.3189",
+        "name": "HTTP ESP8266 Request",
+        "url": "/sendtemperature",
+        "method": "post",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 213,
+        "y": 163,
+        "wires": [
+            [
+                "50c9e0dd.94642"
+            ]
+        ]
+    },
+    {
+        "id": "172b3919.b844bf",
+        "type": "debug",
+        "z": "be424c13.3189",
+        "name": "HTTP 200 Response",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "x": 726,
+        "y": 230,
+        "wires": []
+    },
+    {
+        "id": "50c9e0dd.94642",
+        "type": "function",
+        "z": "be424c13.3189",
+        "name": "splitArray",
+        "func": "if(Array.isArray(msg.payload)===false) {\n    msg.payload = { error: 'Bad request'};\n    return [msg, null, null];\n}\n\nconst regex = /[0-9A-Fa-f]{16}/g;\n\nfor(let element in msg.payload) {\n    let e = msg.payload[element];\n\n    if(e.id===undefined || e.value===undefined) {\n        msg.payload = { error: 'Bad element parameters'};\n        return [msg, null, null];\n    }\n    if(!e.id.match(regex)) {\n        msg.payload = { error: 'Bad element id'};\n        return [msg, null, null];\n    }\n    node.send([null, null, {\"payload\": e}]);\n}\n\nmsg.payload = { ok: 'Handled: '+msg.payload.length};\nreturn [null, msg, null];",
+        "outputs": 3,
+        "noerr": 0,
+        "x": 395,
+        "y": 265,
+        "wires": [
+            [
+                "caae80b.7d5ed",
+                "3a3c81ca.c52d0e"
+            ],
+            [
+                "172b3919.b844bf",
+                "42799b74.7be0b4"
+            ],
+            [
+                "af984139.41ba5"
+            ]
+        ],
+        "outputLabels": [
+            "400",
+            "200",
+            "Split output"
+        ]
+    },
+    {
+        "id": "42799b74.7be0b4",
+        "type": "http response",
+        "z": "be424c13.3189",
+        "name": "",
+        "statusCode": "200",
+        "headers": {},
+        "x": 689,
+        "y": 283,
+        "wires": []
+    },
+    {
+        "id": "caae80b.7d5ed",
+        "type": "http response",
+        "z": "be424c13.3189",
+        "name": "",
+        "statusCode": "400",
+        "headers": {},
+        "x": 600,
+        "y": 170,
+        "wires": []
+    },
+    {
+        "id": "af984139.41ba5",
+        "type": "debug",
+        "z": "be424c13.3189",
+        "name": "Valid Request After Split",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "x": 682,
+        "y": 455,
+        "wires": []
+    },
+    {
+        "id": "3a3c81ca.c52d0e",
+        "type": "debug",
+        "z": "be424c13.3189",
+        "name": "HTTP 400 Response",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "x": 628,
+        "y": 123,
+        "wires": []
+    }
+]
