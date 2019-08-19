@@ -1,0 +1,4 @@
+{
+    "server": "http://192.168.0.150:1880/sendtemperature",
+    "timeout": 20000
+}
