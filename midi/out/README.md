@@ -1,5 +1,7 @@
 # Arduino MIDI out
 
+Arduino MIDI out examples.
+
 ## Arduino and MIDI out
 https://www.arduinoslovakia.eu/blog/2018/6/arduino-a-midi-out?lang=en
 
@@ -26,6 +28,7 @@ https://www.arduinoslovakia.eu/blog/2018/8/arduino-a-midi-out---akordy?lang=en
 - test_timer_shiftpwm_16led
 
 ## MuseScore sources
+
 These are background materials for MIDI articles. I composed them in MuseScore for my daughter and wife.
 
 - waltz_for_esterka
