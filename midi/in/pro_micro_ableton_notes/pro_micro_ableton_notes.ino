@@ -40,6 +40,13 @@ MIDI_CREATE_INSTANCE(UsbTransport, sUsbTransport, MIDI);
 
 const char *notenames[] = {"C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"};
 
+void printChannel(int inChannel)
+{
+  Serial.print("[");
+  Serial.print(inChannel);
+  Serial.print("] ");
+}
+
 void printNoteName(int note)
 {
   int octave = note / 12;
@@ -50,14 +57,17 @@ void printNoteName(int note)
 
 void handleNoteOn(byte inChannel, byte inNumber, byte inVelocity)
 {
+  printChannel(inChannel);
   printNoteName(inNumber);
   Serial.print(" NoteOn  ");
   Serial.print(inNumber);
   Serial.print("\tvelocity: ");
   Serial.println(inVelocity);
 }
+
 void handleNoteOff(byte inChannel, byte inNumber, byte inVelocity)
 {
+  printChannel(inChannel);
   printNoteName(inNumber);
   Serial.print(" NoteOff ");
   Serial.print(inNumber);
@@ -68,7 +78,7 @@ void handleNoteOff(byte inChannel, byte inNumber, byte inVelocity)
 void setup() {
   Serial.begin(115200);
   while (!Serial);
-  MIDI.begin();
+  MIDI.begin(MIDI_CHANNEL_OMNI);
   MIDI.setHandleNoteOn(handleNoteOn);
   MIDI.setHandleNoteOff(handleNoteOff);
   Serial.println("Arduino MIDI note detector.");
