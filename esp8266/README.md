@@ -64,5 +64,6 @@ https://www.arduinoslovakia.eu/blog/2019/4/esp8266---http-server,-favicon-a-oset
 - simple_http_server_favicon
 
 ### ESP8266 - Basic HTTP server with DS18B20
+https://www.arduinoslovakia.eu/blog/2019/8/esp8266---http-server-a-senzor-teploty-ds18b20
 
 - simple_http_server_ds18b20
