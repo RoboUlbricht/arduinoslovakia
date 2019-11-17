@@ -3,33 +3,12 @@ var app = angular.module('singleApp', []);
 app.controller('singleCtrl', ['$scope', '$http', function ($scope, $http) {
 
     function downloadData() {
-        $scope.data = JSON.parse(`{
-            "pedals": [
-                {
-                    "name": "Nautila",
-                    "description": "Sing a song of stormy oceans and float upon the calming seas with the Nautila Chorus/Flanger. Create never before heard tidal swirls or soothing rhythmic waves with the Voice and Drift controls. These controls allow you to add up to eight chorus or four flanger voices and then blend and morph the waveforms in real-time with the Drift knob. Alter the modulation speed in real-time by holding down the momentary footswitch and then release to continue on your voyage through the currents. Separate Speed, Depth, Emphasis, Voices and Mix controls shape your waves into clean curls or soupy foam. True Bypass, stereo inputs and outputs, silent switching, and rugged construction, make the Nautila as practical as it is creative. The Nautila uses a 9VDC power supply to easily integrate into your existing pedalboard.",
-                    "image": "nautila.jpg"
-                },
-                {
-                    "name": "Polara",
-                    "description": "Featuring seven inspirational Lexicon® reverbs, the DigiTech® Polara will be the new architect of your soundscape, defining space and adding dimension to your playing. The Polara’s flexible reverbs cover a full spectrum, from the intimate warmth of “Room”, to the vast expansiveness of “Hall”, through time with the cosmic power of “Reverse”, and anchored by Lexicon’s revered “Modulated”, “Plate” and “Spring” reverbs. In addition to those classics, the Polara introduces the new “Halo” reverb. The “Halo” reverb with cascading octaves interspersed in the reverb decays will cast a heavenly glow over your tone. With its new, compact size and soft-touch vacuum-style footswitch, the Polara truly represents the latest evolution in DigiTech pedal design. We’ve put years of experience into every detail of its mechanical and sonic blueprint. The Polara offers independent Level, Liveliness, Decay and Type controls; Stereo Inputs and Outputs; a Soft Click Footswitch; and a Reverb Tails On/Off Toggle Switch. It is true bypass, and uses a 9V DC power supply to easily integrate into your existing pedalboard. ",
-                    "image": "polara.jpg"
-                },
-                {
-                    "name": "Obscura",
-                    "description": "The Obscura Altered Delay from DigiTech allows you to turn your delays upside down and inside out. The Obscura’s four delay types can be darkened, degraded and distorted on the fly with the stacked Tone and Degrade controls. Combine these controls with the Obscura’s Repeat/Hold feature and lose yourself in long, trippy, gurgling repeats or backwards-manipulated sonic mayhem. In addition to its Tone and Degrade controls, the Obscura features independent Level, Delay Mode and stacked Time and Repeats controls. Complimenting those versatile controls, the Obscura offers four excellent-sounding Analog, Tape, Lo-Fi, and Reverse types, Tap Tempo mode with Beat Divisions, Stereo Inputs/Outputs, a Delay Tails On/Off Switch and True Bypass circuitry. With its compact size and vacuum-style footswitch, the Obscura furthers DigiTech’s evolution in pedal design. We’ve put years of experience into every detail of its mechanical and sonic blueprint. The Obscura uses a 9V DC power supply to easily integrate into your existing pedalboard.",
-                    "image": "obscura.jpg"
-                }
-            ]
-        }`);
-        /*$http.get('data.json')
+        $http.get('data.json')
         .then(function (response) {
             $scope.data = response.data;
-            $scope.error = '';
-            $scope.enabled = true;
         }, function (response) {
             $scope.error = response.data.error;
-        });*/
+        });
     }
 
     downloadData();
