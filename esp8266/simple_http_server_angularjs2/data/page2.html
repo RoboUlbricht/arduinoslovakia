@@ -1,0 +1,22 @@
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="/">ESP8266</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li><a href="/#!/">Temperature</a></li>
+            <li class="active"><a href="/#!/history">History</a></li>
+        </ul>
+    </div>
+</nav>
+
+<table class="table">
+    <tr>
+        <th>#</th>
+        <th>Temperature</th>
+    </tr>
+    <tr ng-repeat="x in data.history track by $index">
+        <td>{{$index+1}}</td>
+        <td>{{x}}</td>
+    </tr>
+</table>
