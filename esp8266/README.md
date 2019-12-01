@@ -69,6 +69,7 @@ https://www.arduinoslovakia.eu/blog/2019/8/esp8266---http-server-a-senzor-teplot
 - simple_http_server_ds18b20
 
 ### ESP8266 - Basic HTTP server and AngularJS
+https://www.arduinoslovakia.eu/blog/2019/11/esp8266---http-server-a-angularjs?lang=en
 
 - simple_http_server_angularjs1
 - simple_http_server_angularjs2
