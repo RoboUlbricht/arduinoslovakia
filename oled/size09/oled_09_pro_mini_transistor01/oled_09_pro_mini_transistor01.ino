@@ -6,7 +6,7 @@
 
    Blink High Power LED using the transistor.
 
-   IDE: 1.8.6 or higher
+   IDE: 1.8.12 or higher
    Board: Arduino Pro Mini
 
    Libraries:
