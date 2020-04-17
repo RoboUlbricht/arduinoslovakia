@@ -1,6 +1,6 @@
 /**
   Arduino Simple Template Print
-  v. 1.0
+  v. 1.1
   Copyright (C) 2020 Robert Ulbricht
   https://www.arduinoslovakia.eu
 
@@ -37,6 +37,16 @@ void setup() {
   Serial.begin(9600);
   Serial << "Simple Template Print\n";
 }
+
+// Replaces this:
+//
+// Serial.print("Loop: );
+// Serial.print(cnt);
+// Serial.print(", ");
+// Serial.print(rnd, 3);
+// Serial.print(" (");
+// Serial.print(original);
+// Serial.print(")\n);
 
 void loop() {
   float rnd = random(100000) / 10000.;
