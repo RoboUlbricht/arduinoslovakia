@@ -1,0 +1,54 @@
+d:\arduino\arduinoslovakia\midi\file\nodejs\midi-parser>npm install
+npm WARN npm npm does not support Node.js v12.16.1
+npm WARN npm You should probably upgrade to a newer version of node as we
+npm WARN npm can't make any promises that npm will work with this version.
+npm WARN npm Supported releases of Node.js are the latest release of 6, 8, 9, 10, 11.
+npm WARN npm You can find the latest version at https://nodejs.org/
+npm notice created a lockfile as package-lock.json. You should commit this file.
+npm WARN midi-parser@1.0.0 No description
+npm WARN midi-parser@1.0.0 No repository field.
+
+added 1 package from 1 contributor in 2.223s
+[+] no known vulnerabilities found [1 packages audited]
+
+
+d:\arduino\arduinoslovakia\midi\file\nodejs\midi-parser>node index
+Tracks: 2, TimeDivision: 480
+Track 0
+ 0 t:255 m:88 delta:0 - 4,2,24,8
+ 1 t:255 m:89 delta:0 - 0
+ 2 t:255 m:81 delta:0 - 500000
+ 3 t:11 ch:1 delta:0 - 121,0
+ 4 t:12 ch:1 delta:0 - 0
+ 5 t:11 ch:1 delta:0 - 7,100
+ 6 t:11 ch:1 delta:0 - 10,64
+ 7 t:11 ch:1 delta:0 - 91,0
+ 8 t:11 ch:1 delta:0 - 93,0
+ 9 t:255 m:33 delta:0 - 0
+ 10 t:9 ch:1 delta:0 - 60,49
+ 11 t:9 ch:1 delta:455 - 60,0
+ 12 t:9 ch:1 delta:25 - 62,53
+ 13 t:9 ch:1 delta:455 - 62,0
+ 14 t:9 ch:1 delta:25 - 64,57
+ 15 t:9 ch:1 delta:455 - 64,0
+ 16 t:9 ch:1 delta:25 - 65,62
+ 17 t:9 ch:1 delta:455 - 65,0
+ 18 t:9 ch:1 delta:25 - 67,66
+ 19 t:9 ch:1 delta:455 - 67,0
+ 20 t:9 ch:1 delta:25 - 69,71
+ 21 t:9 ch:1 delta:455 - 69,0
+ 22 t:9 ch:1 delta:25 - 71,75
+ 23 t:9 ch:1 delta:455 - 71,0
+ 24 t:9 ch:1 delta:25 - 72,80
+ 25 t:9 ch:1 delta:455 - 72,0
+ 26 t:255 m:47 delta:1 - undefined
+Track 1
+ 0 t:255 m:89 delta:0 - 0
+ 1 t:255 m:33 delta:0 - 0
+ 2 t:9 ch:1 delta:0 - 48,49
+ 3 t:9 ch:1 delta:0 - 52,49
+ 4 t:9 ch:1 delta:0 - 55,49
+ 5 t:9 ch:1 delta:3647 - 48,0
+ 6 t:9 ch:1 delta:0 - 52,0
+ 7 t:9 ch:1 delta:0 - 55,0
+ 8 t:255 m:47 delta:1 - undefined
