@@ -36,6 +36,10 @@ https://www.arduinoslovakia.eu/blog/2019/2/esp8266---suborovy-system-spiffs?lang
 - spiffs_test02
 - spiffs_test03
 
+## ESP8266 - LittleFS File system
+
+- littlefs_test01
+
 ## ESP8266 - HTTP server
 
 ### ESP8266 - Basic HTTP server with one page
