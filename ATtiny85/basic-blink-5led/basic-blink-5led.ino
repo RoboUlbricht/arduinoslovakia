@@ -1,6 +1,6 @@
 /**
    ATtiny85 Blink with 5 LED
-   v. 1.0
+   v. 1.1
    Copyright (C) 2018 Robert Ulbricht
    https://www.arduinoslovakia.eu
 
@@ -8,7 +8,7 @@
    This is tester of my ATtiny85 development board.
    https://www.arduinoslovakia.eu/page/smd-attiny85-vyvojova-doska?lang=en  
 
-   IDE: 1.8.5
+   IDE: 1.8.12
    Core: https://github.com/SpenceKonde/ATTinyCore
 
    This program is free software: you can redistribute it and/or modify
@@ -49,6 +49,6 @@ void loop() {
   for (int i = 0; i < ledcount; i++)
     digitalWrite(leds[i], i == step ? HIGH : LOW);
   step++;
-  step %= ledcount - 1;
+  step %= ledcount;
   delay(sleep);
 }
