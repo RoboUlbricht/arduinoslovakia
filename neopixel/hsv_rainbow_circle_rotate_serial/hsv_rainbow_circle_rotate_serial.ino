@@ -55,11 +55,11 @@ void loop() {
   // saturation - max
   // value - 0-255
   for (int i = 0; i < CNT; i++) {
-    sprintf(output, "hue: %d", hue);
-    Serial.println(output);
     strip.setPixelColor((i + position) % CNT, getPixelColorHsv(i, hue, 255, strip.gamma8(i * (255 / CNT))));
   }
   strip.show();
+  sprintf(output, "hue: %d", hue);
+  Serial.println(output);
   position++;
   position %= CNT;
   hue += 2;
